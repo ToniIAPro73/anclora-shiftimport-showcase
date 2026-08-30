@@ -32,7 +32,7 @@
 
 ## Live Demo
 
-Live demo: pending deployment
+**[Abrir demo en vivo → anclora-shiftimport-showcase.vercel.app](https://anclora-shiftimport-showcase.vercel.app)**
 
 Para ejecutar la demo interactiva en local:
 

@@ -1,0 +1,24 @@
+{
+  "_notice": "Fictional data for portfolio demonstration only / Datos ficticios solo para demostración de portfolio",
+  "employee": "Usuario Demo",
+  "month": "2026-09",
+  "source": "sample-roster.csv",
+  "reviewedByUser": true,
+  "shifts": [
+    { "date": "2026-09-01", "type": "regular", "start": "07:00", "end": "15:00" },
+    { "date": "2026-09-02", "type": "regular", "start": "07:00", "end": "15:00" },
+    { "date": "2026-09-03", "type": "regular", "start": "15:00", "end": "23:00" },
+    { "date": "2026-09-04", "type": "regular", "start": "15:00", "end": "23:00" },
+    { "date": "2026-09-05", "type": "off" },
+    { "date": "2026-09-06", "type": "off" },
+    { "date": "2026-09-07", "type": "regular", "start": "23:00", "end": "07:00" },
+    { "date": "2026-09-08", "type": "regular", "start": "23:00", "end": "07:00" },
+    { "date": "2026-09-09", "type": "regular", "start": "07:00", "end": "15:00" },
+    { "date": "2026-09-10", "type": "regular", "start": "07:00", "end": "15:00" },
+    { "date": "2026-09-11", "type": "vacation" },
+    { "date": "2026-09-12", "type": "vacation" },
+    { "date": "2026-09-13", "type": "regular", "start": "15:00", "end": "23:00" },
+    { "date": "2026-09-14", "type": "regular", "start": "15:00", "end": "23:00" },
+    { "date": "2026-09-15", "type": "off" }
+  ]
+}

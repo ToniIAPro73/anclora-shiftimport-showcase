@@ -30,6 +30,18 @@
 
 ---
 
+## Live Demo
+
+Live demo: pending deployment
+
+To run the interactive demo locally:
+
+```bash
+npm install && npm run dev
+```
+
+The demo is built with Vite + React + TypeScript on 100% synthetic data; document analysis is simulated (no real parsing). Details in [docs/demo-architecture.md](docs/demo-architecture.md).
+
 ## The problem
 
 Shift workers receive their rosters in formats they don't control: company-generated PDFs, spreadsheets, images or CSV files. Getting them into a personal calendar means copying shifts one by one — a slow, error-prone chore that repeats every month.
@@ -93,13 +105,13 @@ More detail in [docs/architecture.md](docs/architecture.md).
 
 | File upload | Editable preview |
 |---|---|
-| ![Import screen](assets/screenshots/01-import-upload.svg) | ![Editable preview](assets/screenshots/02-editable-preview.svg) |
+| ![Import screen](assets/screenshots/01-import.png) | ![Editable preview](assets/screenshots/02-preview.png) |
 
-| Month calendar | Metrics |
+| Shift editing | Month calendar |
 |---|---|
-| ![Month calendar](assets/screenshots/03-calendar-month.svg) | ![Statistics](assets/screenshots/04-stats.svg) |
+| ![Shift editing](assets/screenshots/03-editing.png) | ![Month calendar](assets/screenshots/04-calendar.png) |
 
-The screenshots are mockups recreated with fictional data; they do not come from the operational environment or from real rosters.
+The screenshots are captured from this repository's interactive demo (`npm run dev`) running on fictional data; they do not come from the operational environment or from real rosters.
 
 ## Ingestion capabilities
 
@@ -141,6 +153,7 @@ This project demonstrates hands-on experience in:
 
 - [docs/product-overview.md](docs/product-overview.md) — problem, target user and value proposition
 - [docs/architecture.md](docs/architecture.md) — high-level architecture
+- [docs/demo-architecture.md](docs/demo-architecture.md) — architecture of this repository's interactive demo
 - [docs/ingestion-pipeline.md](docs/ingestion-pipeline.md) — conceptual ingestion pipeline
 - [docs/engineering-decisions.md](docs/engineering-decisions.md) — engineering decisions
 - [docs/privacy-and-security.md](docs/privacy-and-security.md) — privacy and security

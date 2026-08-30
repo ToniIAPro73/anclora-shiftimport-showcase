@@ -30,6 +30,18 @@
 
 ---
 
+## Live Demo
+
+Live demo: pending deployment
+
+Para ejecutar la demo interactiva en local:
+
+```bash
+npm install && npm run dev
+```
+
+La demo está construida con Vite + React + TypeScript sobre datos 100 % sintéticos; el análisis del documento está simulado (no hay parsing real). Detalle en [docs/demo-architecture.md](docs/demo-architecture.md).
+
 ## El problema
 
 Las personas que trabajan por turnos reciben sus cuadrantes en formatos que no controlan: PDF generados por la empresa, hojas de cálculo, imágenes o CSV. Pasarlos a un calendario personal significa copiar turno a turno a mano — un proceso lento y propenso a errores que se repite cada mes.
@@ -93,13 +105,13 @@ Más detalle en [docs/architecture.md](docs/architecture.md).
 
 | Carga de archivo | Vista previa editable |
 |---|---|
-| ![Pantalla de importación](assets/screenshots/01-import-upload.svg) | ![Preview editable](assets/screenshots/02-editable-preview.svg) |
+| ![Pantalla de importación](assets/screenshots/01-import.png) | ![Preview editable](assets/screenshots/02-preview.png) |
 
-| Calendario mensual | Métricas |
+| Edición de turnos | Calendario mensual |
 |---|---|
-| ![Calendario mensual](assets/screenshots/03-calendar-month.svg) | ![Estadísticas](assets/screenshots/04-stats.svg) |
+| ![Edición de turnos](assets/screenshots/03-editing.png) | ![Calendario mensual](assets/screenshots/04-calendar.png) |
 
-Las capturas son maquetas recreadas con datos ficticios; no proceden del entorno operativo ni de cuadrantes reales.
+Las capturas proceden de la demo interactiva de este repositorio (`npm run dev`), ejecutándose con datos ficticios; no provienen del entorno operativo ni de cuadrantes reales.
 
 ## Capacidades de ingestión
 
@@ -141,6 +153,7 @@ Este proyecto demuestra experiencia práctica en:
 
 - [docs/product-overview.md](docs/product-overview.md) — problema, usuario y propuesta de valor
 - [docs/architecture.md](docs/architecture.md) — arquitectura de alto nivel
+- [docs/demo-architecture.md](docs/demo-architecture.md) — arquitectura de la demo interactiva de este repositorio
 - [docs/ingestion-pipeline.md](docs/ingestion-pipeline.md) — pipeline de ingestión conceptual
 - [docs/engineering-decisions.md](docs/engineering-decisions.md) — decisiones de ingeniería
 - [docs/privacy-and-security.md](docs/privacy-and-security.md) — privacidad y seguridad

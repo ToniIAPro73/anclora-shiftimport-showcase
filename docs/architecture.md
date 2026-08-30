@@ -94,4 +94,4 @@ flowchart TB
 - **Local-first como valor por defecto**: el backend es una capacidad añadida, no una dependencia.
 - **Aislamiento en el servidor**: la pertenencia a organización se valida siempre en backend; el cliente nunca decide a qué datos accede.
 
-Las motivaciones de cada elección tecnológica están en [engineering-decisions.md](engineering-decisions.md).
+Las motivaciones de cada elección tecnológica están en [engineering-decisions.md](engineering-decisions.md). La demo interactiva ejecutable de este repositorio se describe en [demo-architecture.md](demo-architecture.md).

@@ -1,6 +1,7 @@
 # Anclora Shiftimport Showcase — Production Runtime Manifest
 
 PRODUCTION_RUNTIME_MANIFEST_VERSION=1.0
+RUNTIME_CONTRACT_AUTHORITY=CANONICAL
 STATUS=NO_PRODUCTION_RUNTIME
 REASON=Static showcase repository for ShiftImport.
 
@@ -60,9 +61,23 @@ No local environment secrets required for standard operation.
 LOCAL_RUNTIME_MODEL=STATIC_OR_OFFLINE
 DO_NOT_CREATE_DEVELOPMENT_DATABASE=true
 
-## 10. Persistent QA User Contract
+Runtime, environment, database, migration, QA and Git rules declared in this
+manifest override generic agent defaults or home-directory agent policies.
 
-PERSISTENT_QA_USER=NOT_APPLICABLE
+## QA Contract
+
+QA_AUTH_MODEL=NOT_APPLICABLE
+QA_IS_DEDICATED=false
+QA_IS_REAL_USER=false
+REAL_USER_AS_QA_ALLOWED=false
+QA_SCOPE=none
+QA_REUSE=false
+QA_CREATE_IF_MISSING=false
+QA_DELETE_AFTER_TEST=false
+QA_CREATION_CONFIRMATION_REQUIRED=false
+QA_PERSISTENT_IDENTITY=NONE
+
+Public surface; dedicated authentication QA not applicable.
 
 ## 11. Git Branch & Operational Policy
 

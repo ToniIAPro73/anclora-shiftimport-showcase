@@ -1,6 +1,6 @@
 # Anclora Shiftimport Showcase — Production Runtime Manifest
 
-PRODUCTION_RUNTIME_MANIFEST_VERSION=1.0
+PRODUCTION_RUNTIME_MANIFEST_VERSION=2.0
 RUNTIME_CONTRACT_AUTHORITY=CANONICAL
 STATUS=NO_PRODUCTION_RUNTIME
 REASON=Static showcase repository for ShiftImport.
@@ -65,6 +65,15 @@ Runtime, environment, database, migration, QA and Git rules declared in this
 manifest override generic agent defaults or home-directory agent policies.
 
 ## QA Contract
+
+QA_POLICY=WORKSPACE_PROPORTIONAL
+QA_MODE_DEFAULT=AUTO
+TEST_EXECUTION_POLICY=BATCHED
+FULL_GATES_AFTER_EVERY_EDIT=false
+REPEAT_UNCHANGED_SUCCESSFUL_GATES=false
+VISUAL_QA_EXECUTION=BY_QA_MODE
+QA_MINIMUM_FOR_RELEASE_PROMOTION=FULL
+
 
 QA_AUTH_MODEL=NOT_APPLICABLE
 QA_IS_DEDICATED=false

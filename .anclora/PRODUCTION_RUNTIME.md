@@ -2,8 +2,8 @@
 
 PRODUCTION_RUNTIME_MANIFEST_VERSION=2.0
 RUNTIME_CONTRACT_AUTHORITY=CANONICAL
-STATUS=NO_PRODUCTION_RUNTIME
-REASON=Static showcase repository for ShiftImport.
+STATUS=STATIC_PRODUCTION_RUNTIME
+REASON=Static showcase deployed to Cloudflare Workers + Static Assets; Vercel retained for rollback.
 
 ## 1. Application Identity
 
@@ -14,13 +14,18 @@ FRAMEWORK=Vite + React
 
 ## 2. Runtime Topology
 
-FRONTEND_PROVIDER=NONE
+FRONTEND_PROVIDER=Cloudflare Workers + Static Assets
 BACKEND_PROVIDER=NONE
-PRODUCTION_DOMAIN=NONE
-PRODUCTION_DEPLOYMENT_PROVIDER=NONE
+PRODUCTION_DOMAIN=https://anclora-shiftimport-showcase.anclora.workers.dev/
+PRODUCTION_DEPLOYMENT_PROVIDER=Cloudflare Worker: anclora-shiftimport-showcase
+DEVELOPMENT_DEPLOYMENT_PROVIDER=Cloudflare Worker: anclora-shiftimport-showcase-development
+STAGING_DEPLOYMENT_PROVIDER=Cloudflare Worker: anclora-shiftimport-showcase-staging
+DEPLOYMENT_ENGINE=GitHub Actions + Wrangler 4.147.0
+PRODUCTION_BRANCH=production
+MAIN_DEPLOYS=false
+VERCEL_ROLLBACK_PRESERVED=true
 
-This repository does not deploy an independent production backend or production-backed application runtime.
-It serves as governance, library, static documentation, or showcase.
+This repository deploys a static showcase frontend. It does not maintain an independent production backend or stateful application runtime.
 
 ## 3. Production Database Contract
 

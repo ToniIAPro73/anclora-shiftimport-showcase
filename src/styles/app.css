@@ -77,16 +77,13 @@ body {
 }
 
 .brand-mark {
-  display: inline-grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 9px;
-  background: var(--accent);
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
+  /* Corporate source-app logo (assets/brand). The artwork carries ~12% transparent
+     margin, so the box is larger than the visible medallion and compensated. */
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin: -6px -2px -6px -6px;
+  object-fit: contain;
 }
 
 .brand-name {

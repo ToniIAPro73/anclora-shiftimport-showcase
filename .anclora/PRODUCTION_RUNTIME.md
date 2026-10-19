@@ -1,6 +1,16 @@
 # Anclora Shiftimport Showcase — Production Runtime Manifest
 
 PRODUCTION_RUNTIME_MANIFEST_VERSION=2.0
+REPO_PROFILE=SIMPLE_SHOWCASE
+GIT_WORKFLOW_MODEL=MAIN_ONLY
+BRANCH_MODEL=MAIN_ONLY
+WORKING_BRANCH=main
+DEFAULT_BRANCH=main
+FEATURE_BRANCHES=DISALLOWED_BY_DEFAULT
+PUSH_TARGET=origin/main
+PROMOTION_FLOW=NONE
+AUTO_PROMOTE=false
+PROMOTION_REQUIRED=false
 RUNTIME_CONTRACT_AUTHORITY=CANONICAL
 STATUS=STATIC_PRODUCTION_RUNTIME
 REASON=Static showcase deployed to Cloudflare Workers + Static Assets; Vercel retained for rollback.
@@ -102,5 +112,4 @@ Public surface; dedicated authentication QA not applicable.
 
 ## 11. Git Branch & Operational Policy
 
-DEFAULT_BRANCH=development
 PROMOTION_POLICY=Default development-only operation; no automatic promotion. Explicit current-task user authorization permits only the repository-supported governed promotion path, subject to all gates.

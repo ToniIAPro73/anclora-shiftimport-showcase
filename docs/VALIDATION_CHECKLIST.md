@@ -1,19 +1,19 @@
-# Checklist de validación — unificación al flujo development → main
+# Checklist de validación — arranque local sin conflictos de puerto
 
-**Alcance:** el repositorio pasa del modelo `MAIN_ONLY` al flujo único de Anclora: trabajo en `development`, rama por defecto `development`, ramas `staging`, `production` y `main`, y `promote.yml` (fast-forward) para promocionar. Se actualiza el contrato `.anclora/PRODUCTION_RUNTIME.md` y los adaptadores con `anclora-mods/scripts/adopt-repo.mjs migrate`. No cambia código ni comportamiento de la aplicación.
+**Alcance:** el script `dev` ejecuta primero `anclora-infrastructure/scripts/free-port.mjs`, que libera el puerto asignado al repo en `anclora-infrastructure/config/dev-endpoints.yaml` si lo ocupa un proceso colgado del propio workspace (nunca un proceso ajeno). En los comandos `next dev` y `vite` simples se fija además el puerto del registro (`-p N`, `--port N --strictPort`). No cambia código de la aplicación ni la VPS.
 
 ## Comprobaciones ejecutadas
 
 | Comprobación | Resultado |
 | --- | --- |
-| `adopt-repo.mjs migrate` | MIGRATED |
-| `promote.yml` idéntico a la plantilla de `anclora-mods` | PASS |
-| Tests del adopter (`adopt-repo.test.mjs`) | PASS — 5 tests |
+| `package.json` válido tras el cambio | PASS |
+| Tests de `free-port.mjs` y `wire-dev-port.mjs` (en `anclora-infrastructure`) | PASS — 10 tests |
+| Prueba de extremo a extremo en `anclora-secureflow` (puerto ocupado, `npm run dev`) | PASS — puerto liberado y servidor arrancado en el puerto del registro |
 
 ## Verificación visual
 
-No aplica: solo contrato y workflow.
+No aplica: solo el script de arranque local.
 
 ## Promoción
 
-Se promueve `development` → `staging` → `production` → `main` tras crear las ramas que faltan en el mismo SHA que `main`.
+No solicitada en este cambio.

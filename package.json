@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Demo interactiva de portfolio para Anclora ShiftImport con datos sintéticos",
   "scripts": {
-    "dev": "vite",
+    "dev": "node ../anclora-infrastructure/scripts/free-port.mjs && vite --port 3041 --strictPort",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",

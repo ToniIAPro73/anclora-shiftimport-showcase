@@ -60,7 +60,7 @@ REASON=Static showcase deployed to Cloudflare Workers + Static Assets; Vercel re
 
 APPLICATION_NAME=Anclora Shiftimport Showcase
 REPOSITORY=anclora-shiftimport-showcase
-APPLICATION_TYPE=governance_or_static_library
+APPLICATION_TYPE=frontend
 FRAMEWORK=Vite + React
 
 ## 2. Runtime Topology

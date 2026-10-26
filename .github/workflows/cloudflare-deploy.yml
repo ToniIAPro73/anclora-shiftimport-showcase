@@ -4,6 +4,17 @@ on:
   push:
     branches: [development, staging, production, main]
   pull_request:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Deployment target dispatched by full promotion"
+        required: true
+        type: choice
+        options: [production]
+      source_sha:
+        description: "Exact SHA promoted to production"
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -19,6 +30,18 @@ jobs:
     steps:
       - name: Checkout exact commit
         uses: actions/checkout@v4
+
+      - name: Verify explicitly dispatched SHA
+        if: github.event_name == 'workflow_dispatch'
+        shell: bash
+        env:
+          SOURCE_SHA: ${{ inputs.source_sha }}
+        run: |
+          set -euo pipefail
+          if [[ ! "$SOURCE_SHA" =~ ^[0-9a-f]{40}$ ]] || [[ "$SOURCE_SHA" != "$GITHUB_SHA" ]]; then
+            echo "::error::Dispatched SHA must exactly match the production ref checkout."
+            exit 1
+          fi
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -39,7 +62,7 @@ jobs:
         run: npm run build
 
   deploy:
-    if: github.event_name == 'push' && github.ref_name != 'main'
+    if: (github.event_name == 'push' && github.ref_name != 'main') || (github.event_name == 'workflow_dispatch' && inputs.target == 'production')
     needs: validate
     runs-on: ubuntu-latest
     timeout-minutes: 15

@@ -22,6 +22,7 @@ on:
 permissions:
   statuses: read
   contents: write
+  actions: write
 concurrency:
   group: promote-${{ github.workflow }}
   cancel-in-progress: false
@@ -137,3 +138,9 @@ jobs:
           for target in staging production main; do
             git push origin "$source_sha:refs/heads/$target"
           done
+          echo "Dispatching Cloudflare production deployment for $source_sha"
+          gh workflow run cloudflare-deploy.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref production \
+            --field target=production \
+            --field source_sha="$source_sha"
